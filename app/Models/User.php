@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -46,6 +45,11 @@ class User extends Authenticatable
     public function lists(): Relation
     {
         return $this->hasMany(TodoList::class);
+    }
+
+    public function listItems(): Relation
+    {
+        return $this->hasManyThrough(TodoItem::class, TodoList::class);
     }
 
     public function roles(): Relation
