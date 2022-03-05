@@ -18,6 +18,6 @@ class TodoList extends Model
 
     public function items(): Relation
     {
-        return $this->hasMany(Todoitem::class);
+        return $this->hasMany(TodoItem::class);
     }
 }
