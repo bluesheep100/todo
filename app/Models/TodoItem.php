@@ -10,6 +10,10 @@ class TodoItem extends Model
 {
     use HasFactory;
 
+    public const RULES = [
+        'name' => ['alphanum', 'min:3', 'max:20'],
+    ];
+
     protected $fillable = ['todo_list_id', 'content', 'completed'];
 
     public function list(): Relation
