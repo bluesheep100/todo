@@ -11,7 +11,8 @@ class TodoItem extends Model
     use HasFactory;
 
     public const RULES = [
-        'name' => ['alphanum', 'min:3', 'max:20'],
+        'content' => ['nullable', 'alphanum', 'min:3', 'max:20'],
+        'completed' => ['nullable', 'boolean'],
     ];
 
     protected $fillable = ['todo_list_id', 'content', 'completed'];
