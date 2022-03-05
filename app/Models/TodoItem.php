@@ -11,7 +11,7 @@ class TodoItem extends Model
     use HasFactory;
 
     public const RULES = [
-        'content' => ['nullable', 'alphanum', 'min:3', 'max:20'],
+        'content' => ['nullable', 'min:3', 'max:30'],
         'completed' => ['nullable', 'boolean'],
     ];
 

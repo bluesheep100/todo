@@ -11,7 +11,7 @@ class TodoList extends Model
     use HasFactory;
 
     public const RULES = [
-        'name' => ['alphanum', 'min:3', 'max:30'],
+        'name' => ['min:3', 'max:30'],
     ];
 
     protected $fillable = ['name'];
