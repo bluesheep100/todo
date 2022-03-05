@@ -40,6 +40,14 @@
                             <ul class="list-group">
                                 @foreach($list->items as $item)
                                     <li class="list-group-item">
+                                        <form class="d-inline" onclick="this.submit()" style="cursor: pointer;" action="{{ route('todo-item.destroy', ['item' => $item->id]) }}" method="post">
+                                            @method('DELETE')
+                                            @csrf
+
+                                            <i class="fas fa-close align-middle text-danger"></i>
+                                        </form>
+                                        &nbsp;
+
                                         {{ $item->content }}
 
                                         <form action="{{ route('todo-item.update', ['item' => $item->id]) }}" method="post" class="d-inline-block float-end">
