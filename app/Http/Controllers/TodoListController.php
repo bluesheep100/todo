@@ -21,7 +21,7 @@ class TodoListController extends Controller
 
     public function store()
     {
-        TodoList::create(request()->validate(TodoList::RULES));
+        Auth::user()->lists()->create(request()->validate(TodoList::RULES));
 
         return to_route('home');
     }
