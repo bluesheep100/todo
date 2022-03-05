@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('modals')
+    @include('modals.new_list')
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">
