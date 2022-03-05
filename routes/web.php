@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TodoItemController;
 use App\Http\Controllers\TodoListController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,11 @@ Route::group(['middleware' => 'auth'], function () {
                 Route::delete('/delete', [TodoItemController::class, 'destroy'])->name('todo-item.destroy');
             });
         });
+    });
+
+    Route::group(['prefix' => '/admin'], function () {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::delete('/users/{user}/delete', [AdminController::class, 'destroyUser'])->name('admin.destroy-user');
     });
 });
 

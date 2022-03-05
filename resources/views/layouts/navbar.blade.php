@@ -3,6 +3,10 @@
         <span class="navbar-brand mb-0 h1">To-Do</span>
 
         <div class="ml-auto">
+            @if(Gate::allows('is-admin'))
+                <a href="{{ route('admin.index') }}" class="nav-link d-inline-block">Admin</a>
+            @endif
+
             <button type="button" class="btn btn-primary d-inline-block" data-bs-toggle="modal" data-bs-target="#new-list">
                 New list
                 &nbsp;<i class="fas fa-plus"></i>
