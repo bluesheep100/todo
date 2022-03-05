@@ -5,5 +5,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::redirect('/', '/lists');
-Route::get('/lists', [TodoListController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/lists', [TodoListController::class, 'index'])->name('home');
+});
+
+Route::permanentRedirect('/', '/lists');
