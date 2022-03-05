@@ -15,7 +15,7 @@ class TodoListController extends Controller
         return view('todo_list.index', [
             'lists' => Gate::allows('is-admin') ?
                 TodoList::with('items')->get() :
-                $user->lists()->with('items')->get,
+                $user->lists()->with('items')->get(),
         ]);
     }
 
