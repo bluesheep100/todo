@@ -43,6 +43,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function lists(): Relation
+    {
+        return $this->hasMany(TodoList::class);
+    }
+
     public function roles(): Relation
     {
         return $this->belongsToMany(Role::class);
