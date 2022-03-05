@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Navbar</span>
+        <span class="navbar-brand mb-0 h1">To-Do</span>
 
         <div class="ml-auto">
             <form action="{{ route('logout') }}" method="post" class="form-inline">
