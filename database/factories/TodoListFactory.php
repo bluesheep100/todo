@@ -17,7 +17,7 @@ class TodoListFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->title,
+            'name' => implode(' ', $this->faker->words()),
         ];
     }
 }
