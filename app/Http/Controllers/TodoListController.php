@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Gate;
 
 class TodoListController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(TodoList::class, 'list');
+    }
+
     public function index()
     {
         $user = Auth::user();
