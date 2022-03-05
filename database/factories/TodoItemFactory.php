@@ -21,7 +21,7 @@ class TodoItemFactory extends Factory
             'todo_list_id' => function () {
                 return (TodoList::first() ?? TodoList::factory()->create())->id;
             },
-            'content' => implode(' ', $this->faker->words(10)),
+            'content' => implode(' ', $this->faker->words()),
         ];
     }
 }
